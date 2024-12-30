@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Nederliver</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="header">
+    <nav class="pixel-nav">
+      <a href="index.html" class="nav-link">about</a>
+      <a href="platforms.html" class="nav-link">platforms</a>
+      <a href="contact.html" class="nav-link active-page">contact</a>
+      <a href="donate.html" class="nav-link">donate</a>
+    </nav>
+  </header>
+
+  <!-- Main Content: flex-centered -->
+  <main class="content">
+    <div class="text-block">
+      <!-- No extra space or period after "discord" -->
+      <p class="pixel-text">
+        Want to collaborate or just say hi? DM me on
+        <span
+          id="discord-copy"
+          class="discord-copy highlight-link"
+          onclick="copyDiscord()"
+        >
+          discord
+        </span>
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-text">© 2024 nederliver, All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript to handle copying & feedback -->
+  <script>
+    let isCopying = false; // guard to prevent spam glitch
+
+    function copyDiscord() {
+      if (isCopying) return; // ignore if user is spamming
+
+      isCopying = true;
+      navigator.clipboard.writeText("nederliver");
+
+      const discordSpan = document.getElementById("discord-copy");
+      discordSpan.innerText = "copied";
+      discordSpan.classList.add("copied");
+
+      setTimeout(() => {
+        discordSpan.innerText = "discord";
+        discordSpan.classList.remove("copied");
+        isCopying = false;
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
