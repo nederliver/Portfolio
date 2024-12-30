@@ -7,6 +7,7 @@
   --green: #a6e3a1;
   --rosewater: #f5e0dc;
   --blue: #89b4fa;
+  --red: #f38ba8;
 
   --color-modrinth: #a6e3a1;
   --color-builtbybit: #89b4fa;
@@ -169,7 +170,7 @@ body {
   display: inline-block;
   font-size: 3rem;
   font-weight: bold;
-  color: var(--rosewater);
+  color: var(--red);
   text-decoration: none;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
