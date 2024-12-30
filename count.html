@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Count | Nederliver</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <header class="header">
+    <nav class="pixel-nav">
+      <a href="index.html" class="nav-link">about</a>
+      <a href="platforms.html" class="nav-link">platforms</a>
+      <a href="contact.html" class="nav-link">contact</a>
+      <a href="donate.html" class="nav-link">donate</a>
+      <a href="count.html" class="nav-link active-page">count</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1 class="title-text">Click Counter</h1>
+    <p id="count" class="pixel-text">0</p>
+    <button id="increment-btn" class="donate-button">Click Me!</button>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text">© 2024 nederliver, All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const countElement = document.getElementById("count");
+    const incrementButton = document.getElementById("increment-btn");
+
+    let canClick = true;
+
+    // Fetch the current count from the server
+    async function fetchCount() {
+      try {
+        const response = await fetch("https://your-backend-server.com/api/count");
+        const data = await response.json();
+        countElement.innerText = data.count;
+      } catch (error) {
+        console.error("Failed to fetch count:", error);
+      }
+    }
+
+    // Send increment request to the server
+    async function incrementCount() {
+      if (!canClick) return;
+
+      // Disable further clicks for a short duration (e.g., 500ms)
+      canClick = false;
+      setTimeout(() => {
+        canClick = true;
+      }, 500);
+
+      try {
+        const response = await fetch("https://your-backend-server.com/api/increment", {
+          method: "POST",
+        });
+        const data = await response.json();
+        countElement.innerText = data.count;
+      } catch (error) {
+        console.error("Failed to increment count:", error);
+      }
+    }
+
+    // Fetch the current count on page load
+    fetchCount();
+
+    // Increment count on button click
+    incrementButton.addEventListener("click", incrementCount);
+  </script>
+</body>
+</html>
