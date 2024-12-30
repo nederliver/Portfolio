@@ -6,9 +6,11 @@
   --pink: #f5c2e7;
   --green: #a6e3a1;
   --rosewater: #f5e0dc;
+  --blue: #89b4fa;
 
-  --color-modrinth: #f38ba8;
-  --color-builtbybit: #fab387;
+  --color-modrinth: #a6e3a1;
+  --color-builtbybit: #89b4fa;
+  --color-youtube: #f38ba8;
   --color-github: #f2cdcd;
 }
 
@@ -130,6 +132,9 @@ color: var(--color-modrinth);
 .builtbybit-link a {
 color: var(--color-builtbybit);
 }
+.youtube-link a {
+  color: var(--color-youtube);
+  }
 .github-link a {
 color: var(--color-github);
 }
