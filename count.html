@@ -18,10 +18,8 @@
   </header>
 
   <main class="content">
-    <h1 class="title-text">Click Counter</h1>
-    <p id="count" class="pixel-text">0</p>
-    <button id="increment-btn" class="donate-button">Click Me!</button>
-    <p id="status" class="pixel-text" style="color: var(--pink);"></p>
+    <!-- Button displaying the number of clicks -->
+    <button id="count" class="donate-button">0</button>
   </main>
 
   <footer class="footer">
@@ -29,13 +27,8 @@
   </footer>
 
   <script>
-    // Backend API URL
     const API_URL = "https://portfolio-yoar.onrender.com";
-
-    // DOM Elements
-    const countElement = document.getElementById("count");
-    const incrementButton = document.getElementById("increment-btn");
-    const statusElement = document.getElementById("status");
+    const countButton = document.getElementById("count");
 
     let canClick = true;
 
@@ -43,48 +36,39 @@
     async function fetchCount() {
       try {
         const response = await fetch(`${API_URL}/api/count`);
-        if (!response.ok) throw new Error("Failed to fetch count");
         const data = await response.json();
-        countElement.innerText = data.count;
-        statusElement.innerText = ""; // Clear any error messages
+        countButton.innerText = data.count;
       } catch (error) {
-        statusElement.innerText = "Error fetching count. Please try again.";
-        console.error(error);
+        console.error("Failed to fetch count:", error);
       }
     }
 
-    // Send increment request to the server
+    // Increment the count when the button is clicked
     async function incrementCount() {
-      if (!canClick) {
-        statusElement.innerText = "Please wait before clicking again!";
-        return;
-      }
+      if (!canClick) return;
 
       // Prevent rapid clicking
       canClick = false;
       setTimeout(() => {
         canClick = true;
-        statusElement.innerText = ""; // Clear status message
       }, 500);
 
       try {
         const response = await fetch(`${API_URL}/api/increment`, {
           method: "POST",
         });
-        if (!response.ok) throw new Error("Failed to increment count");
         const data = await response.json();
-        countElement.innerText = data.count;
+        countButton.innerText = data.count;
       } catch (error) {
-        statusElement.innerText = "Error incrementing count. Please try again.";
-        console.error(error);
+        console.error("Failed to increment count:", error);
       }
     }
 
-    // Fetch the current count on page load
+    // Fetch the initial count on page load
     fetchCount();
 
-    // Add event listener to the button
-    incrementButton.addEventListener("click", incrementCount);
+    // Add click event listener to the button
+    countButton.addEventListener("click", incrementCount);
   </script>
 </body>
 </html>
