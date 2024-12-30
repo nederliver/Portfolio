@@ -107,23 +107,6 @@ body {
   color: var(--green);
 }
 
-#count {
-  font-family: "Minibyte", sans-serif;
-  font-size: 3rem;
-  line-height: 1.2;
-  font-weight: bold;
-  color: var(--green);
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-#count:hover {
-  color: var(--pink);
-  transform: scale(1.05);
-}
-
 .platform-item {
   display: flex;
   flex-wrap: wrap;
