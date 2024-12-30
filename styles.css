@@ -1,218 +1,188 @@
-/* ----------------------------
-   Catppuccin Mocha Colors
------------------------------ */
 :root {
-    /* “maroon” for darker red hover */
-    --maroon: #eba0ac;
+  --maroon: #eba0ac;
+  --crust: #1e1e2e;
+  --surface0: #313244;
+  --text: #cdd6f4;
+  --pink: #f5c2e7;
+  --green: #a6e3a1;
+  --rosewater: #f5e0dc;
 
-    /* Other Mocha colors */
-    --crust: #1e1e2e;
-    --surface0: #313244;
-    --text: #cdd6f4;
-    --pink: #f5c2e7;
-    --green: #a6e3a1;
-    --rosewater: #f5e0dc;
-
-    /* Unique platform link colors */
-    --color-modrinth: #f38ba8;
-    --color-builtbybit: #fab387;
-    --color-github: #f2cdcd;
+  --color-modrinth: #f38ba8;
+  --color-builtbybit: #fab387;
+  --color-github: #f2cdcd;
 }
 
 @font-face {
-  font-family: "Minibyte";
-  src: url("fonts/Minibyte.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+font-family: "Minibyte";
+src: url("fonts/Minibyte.ttf") format("truetype");
+font-weight: normal;
+font-style: normal;
+font-display: swap;
 }
 
-/* Global resets & base */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--crust);
-  color: var(--text);
-  font-family: "Minibyte", sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+background-color: var(--crust);
+color: var(--text);
+font-family: "Minibyte", sans-serif;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
 }
 
-/* ----------------------------
-   Header / Nav
------------------------------ */
 .header {
-  background-color: var(--surface0);
-  padding: 0.5rem;
+background-color: var(--surface0);
+padding: 0.5rem;
 }
 
 .pixel-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+display: flex;
+justify-content: center;
+gap: 1.5rem;
 }
 
 .nav-link {
-  color: var(--pink);
-  text-decoration: none;
-  font-size: 2rem; 
-  transition: color 0.3s ease;
+color: var(--pink);
+text-decoration: none;
+font-size: 2rem; 
+transition: color 0.3s ease;
 }
 
 .active-page {
-  text-decoration: underline;
+text-decoration: underline;
 }
 
 .nav-link:hover {
-  color: var(--maroon);
-  cursor: pointer;
-  animation: pixel-bump 0.2s ease-in-out;
+color: var(--maroon);
+cursor: pointer;
+animation: pixel-bump 0.2s ease-in-out;
 }
 
 @keyframes pixel-bump {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-2px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+0% {
+  transform: translateY(0px);
+}
+50% {
+  transform: translateY(-2px);
+}
+100% {
+  transform: translateY(0px);
+}
 }
 
-/* ----------------------------
-   Main Content
------------------------------ */
 .content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  max-width: 1000px;
-  width: 90%;
-  margin: 0 auto;
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 1rem;
+max-width: 1000px;
+width: 90%;
+margin: 0 auto;
 }
 
 .pixel-text {
-  font-size: 2rem;
-  line-height: 1.3;
-  margin-bottom: 1rem;
+font-size: 2rem;
+line-height: 1.3;
+margin-bottom: 1rem;
 }
 
 .title-text {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  color: var(--green);
+font-size: 3rem;
+line-height: 1.2;
+margin-bottom: 1rem;
+color: var(--green);
 }
 
-/* ----------------------------
-   Platforms Layout
------------------------------ */
 .platform-item {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  text-align: left;
-  margin: 1rem 0;
+display: flex;
+flex-wrap: wrap;
+justify-content: flex-start;
+text-align: left;
+margin: 1rem 0;
 }
 
 .platform-name {
-  font-size: 2rem;
-  line-height: 1.3;
-  margin-right: 0.5rem;
+font-size: 2rem;
+line-height: 1.3;
+margin-right: 0.5rem;
 }
 
 .platform-description {
-  font-size: 2rem;
-  line-height: 1.3;
+font-size: 2rem;
+line-height: 1.3;
 }
 
-/* Unique platform link colors */
 .modrinth-link a {
-  color: var(--color-modrinth);
+color: var(--color-modrinth);
 }
 .builtbybit-link a {
-  color: var(--color-builtbybit);
+color: var(--color-builtbybit);
 }
 .github-link a {
-  color: var(--color-github);
+color: var(--color-github);
 }
 
-/* Underline on hover */
 .underline-link a {
-  text-decoration: none;
+text-decoration: none;
 }
 .underline-link a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
 
-/* ----------------------------
-   Discord copying
------------------------------ */
 .highlight-link {
-  color: var(--green);
-  text-decoration: none;
-  font-size: 2rem;
-  line-height: 1.3;
+color: var(--green);
+text-decoration: none;
+font-size: 2rem;
+line-height: 1.3;
 }
 
 .discord-copy {
-  cursor: pointer;
+cursor: pointer;
 }
 .discord-copy:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
 
-/* "copied" color (no bold) */
 .discord-copy.copied {
-  color: var(--maroon);
-  text-decoration: none;
+color: var(--maroon);
+text-decoration: none;
 }
 
-/* ----------------------------
-   Donate Button 
-   (centered in .content)
------------------------------ */
 .donate-button {
-  display: inline-block;          /* so margin / animation can apply */
-  font-size: 3rem;                /* match your .title-text size if you like */
-  font-weight: bold;              /* bold, per request */
-  color: #f38ba8;                 /* Catppuccin red */
-  text-decoration: none;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
+display: inline-block;
+font-size: 3rem;
+font-weight: bold;
+color: #f38ba8;
+text-decoration: none;
+margin-bottom: 1rem;
+transition: color 0.3s ease;
 }
 
 .donate-button:hover {
-  text-decoration: underline;
-  animation: pixel-bump 0.2s ease-in-out; /* same hover bounce */
+text-decoration: underline;
+animation: pixel-bump 0.2s ease-in-out;
 }
 
-/* ----------------------------
-   Footer
------------------------------ */
 .footer {
-  background-color: var(--surface0);
-  text-align: center;
-  padding: 0.5rem;
+background-color: var(--surface0);
+text-align: center;
+padding: 0.5rem;
 }
 
 .footer-text {
-  font-size: 2rem;
-  line-height: 1.3;
-  color: var(--rosewater);
+font-size: 2rem;
+line-height: 1.3;
+color: var(--rosewater);
 }
