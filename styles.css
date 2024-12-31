@@ -63,6 +63,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.1s ease, color 0.1s ease;
 }
 
 .header {
@@ -72,6 +73,7 @@ body {
   display: flex; /* Flexbox for alignment */
   justify-content: center; /* Center the navigation bar horizontally */
   align-items: center; /* Center items vertically */
+  transition: background-color 0.1s ease, color 0.1s ease;
 }
 
 .pixel-nav {
@@ -103,7 +105,6 @@ body {
   color: var(--text);
   padding: 0;
   cursor: pointer;
-  text-decoration: underline;
 }
 
 .content {
