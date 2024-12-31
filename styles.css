@@ -1,20 +1,40 @@
 /* Color theme for the dark mode */
 :root {
-  --base: #1e1e2e;
-  --surface0: #313244;
-  --surface2: #585b70;
-  --text: #cdd6f4;
-  --green: #a6e3a1;
-  --red: #f38ba8;
-  --peach: #fab387;
-  --mauve: #cba6f7;
-  --flamingo: #f2cdcd;
-  --sky: #89b4fa;
+  --base: #232136;
+  --surface: #2a273f;
+  --muted: #6e6a86;
+  --subtitle: #908caa;
+  --text: #e0def4;
+  --love: #eb6f92;
+  --gold: #f6c177;
+  --rose: #ea9a97;
+  --pine: #3e8fb0;
+  --foam: #9ccfd8;
+  --iris: #c4a7e7;
 
-  --color-modrinth: var(--green);
-  --color-builtbybit: var(--sky);
-  --color-youtube: var(--red);
-  --color-github: var(--flamingo);
+  --color-modrinth: var(--pine);
+  --color-builtbybit: var(--foam);
+  --color-youtube: var(--love);
+  --color-github: var(--iris);
+}
+
+.lightmode {
+  --base: #faf4ed;
+  --surface: #f2e9e1;
+  --muted: #9893a5;
+  --subtitle: #797593;
+  --text: #575279;
+  --love: #b4637a;
+  --gold: #ea9d34;
+  --rose: #d7827e;
+  --pine: #286983;
+  --foam: #56949f;
+  --iris: #907aa9;
+
+  --color-modrinth: var(--pine);
+  --color-builtbybit: var(--foam);
+  --color-youtube: var(--love);
+  --color-github: var(--iris);
 }
 
 /* Font */
@@ -38,7 +58,7 @@ html {
 
 body {
   background-color: var(--base);
-  color: var(--text);
+  color: var(--subtitle);
   font-family: "Minibyte", sans-serif;
   min-height: 100vh;
   display: flex;
@@ -46,7 +66,7 @@ body {
 }
 
 .header {
-  background-color: var(--surface0);
+  background-color: var(--surface);
   padding: 0.5rem;
   height: 3rem; /* Fixed height */
   display: flex; /* Flexbox for alignment */
@@ -65,13 +85,25 @@ body {
 .nav-link {
   font-size: 2rem;
   line-height: 1;
-  color: var(--flamingo);
+  color: var(--rose);
   text-decoration: none;
   white-space: nowrap; /* Prevent text wrapping */
 }
 
 .active-page {
-  color: var(--red);
+  color: var(--love);
+}
+
+#mode-switch {
+  line-height: 1;
+  font-size: 2rem;
+  font-family: "Minibyte";
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .content {
@@ -93,26 +125,26 @@ body {
 }
 
 .about_title{
-  color: var(--green);
+  color: var(--gold);
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .platforms_title{
-  color: var(--sky);
+  color: var(--text);
   font-size: 3rem;
   margin-bottom: 1rem;
   }
 
 .contact_title{
-  color: var(--peach);
+  color: var(--text);
   font-size: 3rem;
   margin-bottom: 1rem;
   }
 
 .donate-button {
   font-size: 3rem;
-  color: var(--red);
+  color: var(--love);
   text-decoration: underline;
   margin-bottom: 1rem
 }
@@ -151,14 +183,14 @@ body {
 
 
 .discord-button {
-  color: var(--mauve);
+  color: var(--iris);
   font-size: 2rem;
   cursor: pointer;
 }
 
 
 #discord-copy.copied {
-  color: var(--maroon);
+  color: var(--love);
 }
 
 
@@ -168,5 +200,5 @@ body {
   text-align: center;
   font-size: 1.7rem;
   line-height: 1.3;
-  color: var(--surface2);
+  color: var(--muted);
 }
