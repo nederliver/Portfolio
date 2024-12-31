@@ -12,23 +12,22 @@
       <a href="index.html" class="nav-link">about</a>
       <a href="platforms.html" class="nav-link">platforms</a>
       <a href="contact.html" class="nav-link active-page">contact</a>
-      <a href="donate.html" class="nav-link">donate</a>
+      <a href="donate.html" class="nav-link">ko-fi</a>
     </nav>
   </header>
 
   <main class="content">
-    <div class="text-block">
+    <span class="contact_title">contact</span>
       <p class="pixel-text">
-        Want to collaborate or just say hi? DM me on
-        <span
-          id="discord-copy"
-          class="discord-copy highlight-link"
+        Want to collaborate or just say hi? dm me on
+        <a 
+          id="discord-copy" 
+          class="discord-button" 
           onclick="copyDiscord()"
         >
           discord
-        </span>
+        </a>
       </p>
-    </div>
   </main>
 
   <footer class="footer">
@@ -41,6 +40,7 @@
     function copyDiscord() {
       if (isCopying) return;
       isCopying = true;
+
       navigator.clipboard.writeText("nederliver");
 
       const discordSpan = document.getElementById("discord-copy");
