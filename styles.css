@@ -56,6 +56,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.unselectable {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+}
+
 body {
   background-color: var(--base);
   color: var(--subtitle);
@@ -100,8 +108,6 @@ body {
   line-height: 1;
   font-size: 2rem;
   font-family: "Minibyte";
-  background: none;
-  border: none;
   color: var(--text);
   padding: 0;
   cursor: pointer;
@@ -184,7 +190,7 @@ body {
 
 
 .discord-button {
-  color: var(--iris);
+  color: var(--pine);
   font-size: 2rem;
   cursor: pointer;
 }
