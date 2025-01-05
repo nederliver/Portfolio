@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "title": "MinCross",
+      "date": "2024-12-27",
+      "description": "Minimalistic pvp or survival crosshair resource pack",
+      "modrinthLink": "https://modrinth.com/project/mincross",
+      "titleColor": "foam"
+    },
+    {
+      "title": "MinGen",
+      "date": "2024-06-03",
+      "description": "Enhance your world",
+      "modrinthLink": "https://modrinth.com/project/mingen",
+      "titleColor": "pine"
+    },
+    {
+      "title": "MinLog",
+      "date": "2024-06-23",
+      "description": "Spawns fallen trees around the world",
+      "modrinthLink": "https://modrinth.com/project/minlog",
+      "titleColor": "rose"
+    },
+    {
+      "title": "MinChest",
+      "date": "2024-07-11",
+      "description": "Makes chest open and close  sounds more clunk and simple",
+      "modrinthLink": "https://modrinth.com/project/minchest",
+      "titleColor": "rose"
+    },
+    {
+      "title": "Holmium",
+      "date": "2024-07-06",
+      "description": "Even better, client side improvements and new stuff",
+      "modrinthLink": "https://modrinth.com/modpack/holmium",
+      "titleColor": "iris"
+    },
+    {
+      "title": "Creack",
+      "date": "2024-12-29",
+      "description": "Simple mod that plays creack sound when game finished loading",
+      "modrinthLink": "https://modrinth.com/project/creack",
+      "titleColor": "love"
+    },
+    {
+      "title": "Totem Of Cookie",
+      "date": "2024-04-30",
+      "description": "A cookie totem :)",
+      "modrinthLink": "https://modrinth.com/project/totem-of-cookie",
+      "titleColor": "gold"
+    },
+    {
+      "title": "MinClick",
+      "date": "2024-06-18",
+      "description": "Makes click sound more clunk and simple",
+      "modrinthLink": "https://modrinth.com/project/minclick",
+      "titleColor": "rose"
+    }
+  ]
+}
