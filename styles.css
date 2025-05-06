@@ -208,7 +208,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   transition: color 0.18s ease; /* Added transition */
 }
-
+.nosimbols {
+  font-family: "Minibyte_nosimbols";
+}
 .donate-button {
   font-size: 3.5rem;
   color: var(--love);
