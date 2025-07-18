@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Tiny5&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --base: #191724;
+            --surface: #1f1d2e;
+            --overlay: #26233a;
+            --text: #e0def4;
+            --suble: #908caa;
+            --muted: #6e6a86;
+            --hightlight-low: #21202e;
+            --hightlight-med: #403d52;
+            --hightlight-high: #524f67;
+            --love: #eb6f92;
+            --gold: #f6c177;
+            --pine: #31748f;
+            --rose: #ebbcba;
+        }
+        
+        body {
+            font-family: "Tiny5", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: var(--base);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            gap: 3vh;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        ::selection { background: var(--hightlight-high); }
+        ::-moz-selection { background: var(--hightlight-high); }
+
+        .portfolio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 25px;
+        }
+        
+        .window {
+            background-color: var(--base);
+            border: clamp(4px, 1.2vw, 8px) solid var(--overlay);
+            width: 90vw;
+            max-width: 900px;
+            height: 600px;
+            max-height: 90vh;
+            position: relative;
+            box-shadow: 8px 8px 0px var(--surface);
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .window-header {
+            background-color: var(--overlay);
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .window-title {
+            font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+            color: var(--suble);
+        }
+        
+        .window-controls {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .control-btn {
+            width: clamp(10px, 2vw, 13px);
+            height: clamp(10px, 2vw, 13px);
+            position: relative;
+        }
+        .control-btn.love { background-color: var(--love); }
+        .control-btn.gold { background-color: var(--gold); }
+        .control-btn.pine { background-color: var(--pine); }
+        
+        .window-content {
+            padding: clamp(1rem, 4%, 2rem) clamp(1rem, 4%, 2rem) 0;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            height: 100%;
+            gap: 1.5vh;
+        }
+        
+        .page-title, .project-title, .donate-title {
+            color: var(--text);
+        }
+        .page-title { font-size: clamp(1.5rem, 5vw, 2.375rem); }
+        .project-title { font-size: clamp(1rem, 3.5vw, 1.5rem); }
+        .donate-title {
+            font-size: clamp(1.5rem, 5vw, 2.375rem);
+            margin-bottom: 20px;
+            text-align: center;
+            text-decoration: underline 5px;
+            cursor: pointer;
+            text-decoration-color: var(--love);
+        }
+
+        .page-text, .page-text-muted {
+            font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+            line-height: 1.5;
+            max-width: 80%;
+        }
+        .page-text { color: var(--suble); }
+        .page-text-muted { color: var(--gold); }
+        
+        .pfp-img {
+            height: clamp(80px, 18vh, 168px);
+            border-radius: 1px;
+            margin-bottom: 2vh;
+        }
+        
+        .dock {
+            display: flex;
+            gap: clamp(12px, 3vw, 24px);
+            background-color: var(--base);
+            padding: 12px;
+            border: 4px solid var(--overlay);
+            box-shadow: 8px 8px 0px var(--surface);
+        }
+        
+        .dock-item {
+            color: var(--suble);
+            width: clamp(36px, 6vw, 48px);
+            height: clamp(36px, 6vw, 48px);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.1s ease;
+            position: relative;
+        }
+        .dock-item.active { color: var(--text); }
+        .dock-item:hover { transform: translateY(-2px); }
+        
+        .hidden { display: none !important; }
+        
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .link-item {
+            color: var(--text);
+            text-decoration: underline 3px;
+            text-decoration-color: var(--love);
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-size: clamp(1rem, 3vw, 1.25rem);
+        }
+        
+        .project-img { height: clamp(60px, 12vh, 100px); }
+        .links-img { height: clamp(60px, 12vh, 100px); margin-top: 2vh; }
+        .donate-img { height: clamp(100px, 20vh, 200px); margin-top: auto; }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .project-item {
+            border: 8px solid var(--overlay);
+            padding: 15px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+        
+        .contact-inputs {
+            width: 100%;
+            max-width: 450px;
+            height: 45px;
+            outline: none;
+            border: none;
+            caret-color: var(--text);
+            font-weight: 400;
+            color: var(--text);
+            background-color: var(--surface);
+            font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+            font-family: "Tiny5", sans-serif;
+            padding: 15px;
+            text-align: center;
+        }
+        .contact-inputs:focus { background-color: var(--overlay); }
+        .contact-inputs::placeholder { color: var(--muted); }
+        
+        textarea.contact-inputs {
+            height: 190px;
+            resize: none;
+        }
+        
+        .contact-form button {
+            cursor: pointer;
+            padding: 14px 15px;
+            font-size: clamp(1rem, 3.5vw, 1.5rem);
+            color: var(--love);
+            background-color: var(--base);
+            font-family: "Tiny5", sans-serif;
+            outline: none;
+            border: none;
+        }
+        
+        .license, .page-version {
+            position: fixed;
+            bottom: 15px;
+            z-index: 1000;
+            font-size: clamp(0.75rem, 2vw, 1rem);
+            color: var(--muted);
+        }
+        .license { left: 15px; }
+        .page-version { right: 15px; }
+
+    </style>
+</head>
+<body>
+    <div class="portfolio-container">
+        <div class="window">
+            <div class="window-header">
+                <div class="window-title" id="windowTitle">HOME</div>
+                <div class="window-controls">
+                    <div class="control-btn love"></div>
+                    <div class="control-btn gold"></div>
+                    <div class="control-btn pine"></div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div id="home" class="page">
+                    <img src="/images/pfp.png" alt="Profile Picture" class="pfp-img no-drag">
+                    <div class="page-title">Hi, I'm nederliver</div>
+                    <div class="page-text">
+                        I do pixel art, 3D modeling, and coding.<br>
+                        I'm not a professional, but I'm trying to become better.
+                    </div>
+                    <div class="page-text-muted">
+                        Look at other pages for more info about me.
+                    </div>
+                </div>
+                
+                <div id="artworks" class="page hidden">
+                    <div class="page-title">My artworks</div>
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <div class="project-title">Dirt Block</div>
+                            <img src="/images/block.png" alt="Dirt Block" class="project-img no-drag">
+                        </div>
+                        <div class="project-item">
+                            <div class="project-title">Diamond Sword</div>
+                            <img src="/images/diamond_sword.png" alt="Diamond Sword" class="project-img no-drag">
+                        </div>
+                        <div class="project-item">
+                            <div class="project-title">Bow</div>
+                            <img src="/images/bow.png" alt="Bow" class="project-img no-drag">
+                        </div>
+                        <div class="project-item">
+                            <div class="project-title">Golden Apple</div>
+                            <img src="/images/golden_apple.png" alt="Golden Apple" class="project-img no-drag">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="links" class="page hidden">
+                    <div class="page-title">Links</div>
+                    <div class="page-text">Find me on these platforms:</div>
+                    <div class="links-list">
+                        <div class="link-item" data-url="https://github.com/nederliver">GITHUB</div>
+                        <div class="link-item" data-url="https://www.youtube.com/@nederliver">YOUTUBE</div>
+                        <div class="link-item" data-url="https://modrinth.com/user/nederliver">MODRINTH</div>
+                        <div class="link-item" data-url="https://builtbybit.com/creators/nederliver.480122">BUILTBYBIT</div>
+                    </div>
+                    <img src="/images/eyes.png" alt="Eyes" class="links-img no-drag">
+                </div>
+
+                <div id="contact" class="page hidden">
+                    <div class="page-title">Contact me</div>
+                    <div class="page-text">Have a question, ask me here</div>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                        <input type="hidden" name="access_key" value="780067e4-b4a9-4e52-ad6b-42105df6ab42">
+                        <input type="text" name="name" placeholder="Your nickname" class="contact-inputs" required>
+                        <input type="email" name="email" placeholder="Your email" class="contact-inputs" required>
+                        <textarea name="message" placeholder="Your message" class="contact-inputs" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                
+                <div id="donate" class="page hidden">
+                    <div class="donate-title">DONATE</div>
+                    <div class="page-text">If you find stuff i make useful, consider a small tip :3</div>
+                    <img src="/images/plant.png" alt="Plant" class="donate-img no-drag">
+                </div>
+            </div>
+        </div>
+        
+        <div class="dock">
+            <div class="dock-item active" data-page="home">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v12H8V8h8v6h2V6H6v12h14v2H4V4zm10 10v-4h-4v4h4z" fill="currentColor"/></svg>
+            </div>
+            <div class="dock-item" data-page="artworks">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18V3H3zm16 2v14H5V5h14zM7 7h6v6H9v2H7V7zm8 6h-2v2h-2v2h2v-2h2v2h2v-2h-2v-2zm0 0h2v-2h-2v2zM9 9v2h2V9H9z" fill="currentColor"/></svg>
+            </div>
+            <div class="dock-item" data-page="links">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 6h7v2H4v8h7v2H2V6h2zm16 0h-7v2h7v8h-7v2h9V6h-2zm-3 5H7v2h10v-2z" fill="currentColor"/></svg>
+            </div>
+            <div class="dock-item" data-page="contact">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h18v8h-2V6H4v12h8v2H2V4h2zm4 4H6v2h2v2h2v2h4v-2h2v-2h2V8h-2v2h-2v2h-4v-2H8V8zm10 6h2v4h4v2h-2v2h-2v2h-2v-4h-4v-2h2v-2h2v-2z" fill="currentColor"/></svg>
+            </div>
+            <div class="dock-item" data-page="donate">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 2h2v4h6v2H7v3H5V6h6V2zM5 18h6v4h2v-4h6v-2H5v2zm14-7H5v2h12v3h2v-5z" fill="currentColor"/></svg>
+            </div>
+        </div>
+    </div>
+    <span class="license">2025 nederliver, All Rights Reserved</span>
+    <span class="page-version">v1.0.0</span>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dockItems = document.querySelectorAll('.dock-item');
+        const pages = document.querySelectorAll('.page');
+        const windowTitle = document.getElementById('windowTitle');
+        const linkItems = document.querySelectorAll('.link-item');
+        const nonDraggableImages = document.querySelectorAll('.no-drag');
+
+        nonDraggableImages.forEach(img => img.setAttribute('draggable', false));
+
+        const titles = {
+            home: 'HOME',
+            artworks: 'MY ARTWORKS',
+            links: 'LINKS',
+            contact: 'CONTACT ME',
+            donate: 'DONATE'
+        };
+        
+        dockItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetPageId = item.dataset.page;
+                
+                dockItems.forEach(dockItem => dockItem.classList.remove('active'));
+                item.classList.add('active');
+                
+                pages.forEach(page => page.classList.add('hidden'));
+                document.getElementById(targetPageId).classList.remove('hidden');
+                
+                windowTitle.textContent = titles[targetPageId];
+            });
+        });
+        
+        linkItems.forEach(item => {
+            item.addEventListener('click', () => {
+                window.open(item.dataset.url, "_blank");
+            });
+        });
+    });
+    </script>
+</body>
+</html>
