@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Portfolio - Contact</title>
-    <style>
-        /* [ All CSS from the original file goes here. It is identical to the CSS in index.html ] */
-        @import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Tiny5&display=swap');* {margin: 0;padding: 0;box-sizing: border-box;}:root {--base: #191724;--surface: #1f1d2e;--overlay: #26233a;--text: #e0def4;--suble: #908caa;--muted: #6e6a86;--hightlight-low: #21202e;--hightlight-med: #403d52;--hightlight-high: #524f67;--love: #eb6f92;--gold: #f6c177;--pine: #31748f;--rose: #ebbcba;}body {font-family: "Tiny5", sans-serif;font-weight: 400;font-style: normal;background-color: var(--base);color: var(--text);min-height: 100vh;overflow-x: hidden;display: flex;flex-direction: column;align-items: center;justify-content: center;padding: 20px;gap: 3vh;-webkit-user-select: none;-moz-user-select: none;user-select: none;}::selection { background: var(--hightlight-high); }::-moz-selection { background: var(--hightlight-high); }.portfolio-container {display: flex;flex-direction: column;align-items: center;width: 100%;gap: 25px;}.window {background-color: var(--base);border: clamp(4px, 1.2vw, 8px) solid var(--overlay);width: 90vw;max-width: 900px;height: 600px;max-height: 90vh;position: relative;box-shadow: 8px 8px 0px var(--surface);image-rendering: pixelated;image-rendering: -moz-crisp-edges;image-rendering: crisp-edges;display: flex;flex-direction: column;}.window-header {background-color: var(--overlay);padding: 8px 16px;display: flex;justify-content: space-between;align-items: center;flex-shrink: 0;}.window-title {font-size: clamp(0.8rem, 2.5vw, 1.1rem);color: var(--suble);}.window-controls {display: flex;gap: 8px;}.control-btn {width: clamp(10px, 2vw, 13px);height: clamp(10px, 2vw, 13px);position: relative;}.control-btn.love { background-color: var(--love); }.control-btn.gold { background-color: var(--gold); }.control-btn.pine { background-color: var(--pine); }.window-content {padding: clamp(1rem, 4%, 2rem) clamp(1rem, 4%, 2rem) 0;height: 100%;overflow-y: auto;}.page {display: flex;flex-direction: column;align-items: center;justify-content: flex-start;text-align: center;height: 100%;gap: 1.5vh;}.page-title, .project-title, .donate-title {color: var(--text);}.page-title { font-size: clamp(1.5rem, 5vw, 2.375rem); }.project-title { font-size: clamp(1rem, 3.5vw, 1.5rem); }.donate-title {font-size: clamp(1.5rem, 5vw, 2.375rem);margin-bottom: 20px;text-align: center;text-decoration: underline 5px;cursor: pointer;text-decoration-color: var(--love);}.page-text, .page-text-muted {font-size: clamp(0.9rem, 2.5vw, 1.25rem);line-height: 1.5;max-width: 80%;}.page-text { color: var(--suble); }.page-text-muted { color: var(--gold); }.pfp-img {height: clamp(80px, 18vh, 168px);border-radius: 1px;margin-bottom: 2vh;}.dock {display: flex;gap: clamp(12px, 3vw, 24px);background-color: var(--base);padding: 12px;border: 4px solid var(--overlay);box-shadow: 8px 8px 0px var(--surface);}.dock-item {color: var(--suble);width: clamp(36px, 6vw, 48px);height: clamp(36px, 6vw, 48px);cursor: pointer;display: flex;align-items: center;justify-content: center;transition: all 0.1s ease;position: relative;}.dock-item.active { color: var(--text); }.dock-item:hover { transform: translateY(-2px); }.links-list {display: flex;flex-direction: column;gap: 8px;margin-top: 20px;}.link-item {color: var(--text);text-decoration: underline 3px;text-decoration-color: var(--love);padding: 10px;text-align: center;cursor: pointer;font-size: clamp(1rem, 3vw, 1.25rem);}.project-img { height: clamp(60px, 12vh, 100px); }.links-img { height: clamp(60px, 12vh, 100px); margin-top: 2vh; }.donate-img { height: clamp(100px, 20vh, 200px); margin-top: auto; }.project-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));gap: 15px;width: 100%;margin-top: 20px;}.project-item {border: 8px solid var(--overlay);padding: 15px;text-align: center;align-items: center;display: flex;flex-direction: column;justify-content: center;gap: 15px;}.contact-form {display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 10px;width: 100%;}.contact-inputs {width: 100%;max-width: 450px;height: 45px;outline: none;border: none;caret-color: var(--text);font-weight: 400;color: var(--text);background-color: var(--surface);font-size: clamp(0.9rem, 2.5vw, 1.25rem);font-family: "Tiny5", sans-serif;padding: 15px;text-align: center;}.contact-inputs:focus { background-color: var(--overlay); }.contact-inputs::placeholder { color: var(--muted); }textarea.contact-inputs {height: 190px;resize: none;}.contact-form button {cursor: pointer;padding: 14px 15px;font-size: clamp(1rem, 3.5vw, 1.5rem);color: var(--love);background-color: var(--base);font-family: "Tiny5", sans-serif;outline: none;border: none;}.license, .page-version {position: fixed;bottom: 15px;z-index: 1000;font-size: clamp(0.75rem, 2vw, 1rem);color: var(--muted);}.license { left: 15px; }.page-version { right: 15px; }
-    </style>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="portfolio-container">
@@ -29,7 +27,8 @@
                         <input type="text" name="name" placeholder="Your nickname" class="contact-inputs" required>
                         <input type="email" name="email" placeholder="Your email" class="contact-inputs" required>
                         <textarea name="message" placeholder="Your message" class="contact-inputs" required></textarea>
-                        <button type="submit">Submit</button>
+                        <button type="submit" onclick="play()">Submit</button>
+                        <audio src="/sounds/click.mp3" id="audioPlayer"></audio>
                     </form>
                 </div>
             </div>
@@ -56,9 +55,6 @@
     <span class="license">2025 nederliver, All Rights Reserved</span>
     <span class="page-version">v1.0.0</span>
 
-    <script>
-        // No script needed for this page specifically, but keeping the listener is fine.
-        document.addEventListener('DOMContentLoaded', () => {});
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
