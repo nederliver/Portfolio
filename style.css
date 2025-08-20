@@ -285,13 +285,12 @@ body {
 
 .project-img { height: clamp(60px, 12vh, 100px); }
 
-/* Fixed Links Image - Better Positioning */
 .links-img { 
-    height: clamp(80px, 15vh, 120px); 
+    height: clamp(60px, 12vh, 100px); 
     margin-top: auto;
     margin-bottom: 5vh;
+    flex-shrink: 0;
 }
-
 .donate-img { height: clamp(100px, 20vh, 200px); margin-top: auto; }
 
 .project-grid {
