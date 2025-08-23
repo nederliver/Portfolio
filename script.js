@@ -3,6 +3,7 @@ const itemSelectors = [
     '.link-item-modrinth',
     '.link-item-youtube',
     '.link-item-github',
+    '.donate-title',
     '.link-item-builtbybit'
     // Add more selectors as needed
 ];
