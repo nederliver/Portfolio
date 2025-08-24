@@ -7,8 +7,9 @@
 }
 
 :root {
+    --under: #12101a;
     --base: #161420;
-    --shadow: #13101b;
+    --shadow: #0d0b11;
     --surface: #191724;
     --surface1: #1f1d2e;
     --overlay: #26233a;
@@ -17,19 +18,18 @@
     --suble1: #bab8d6;
     --muted: #6e6a86;
     --hightlight-low: #21202e;
-    --hightlight-med: #403d52;
+    --hightlight-med: #050407;
     --hightlight-high: #524f67;
     --love: #eb6f92;
     --gold: #f6c177;
     --pine: #31748f;
     --rose: #ebbcba;
 }
-
 body {
     font-family: "Tiny5", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: var(--base);
+    background-color: var(--under);
     color: var(--text);
     min-height: 100vh;
     overflow-x: hidden;
@@ -44,6 +44,7 @@ body {
     user-select: none;
 }
 
+
 ::selection { background: var(--hightlight-high); }
 ::-moz-selection { background: var(--hightlight-high); }
 
@@ -53,6 +54,10 @@ body {
     align-items: center;
     width: 100%;
     gap: 25px;
+}
+.window,
+.dock {
+    background-color: var(--base);
 }
 
 .window {
