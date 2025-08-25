@@ -205,13 +205,13 @@ body {
     bottom: calc(100% + 9px);
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--overlay);
+    background-color: var(--surface);
     color: var(--suble1);
     padding: 6px 10px;
     font-size: clamp(0.8rem, 2vw, 1rem);
     font-family: "Tiny5", sans-serif;
     white-space: nowrap;
-    border: 3px solid var(--hightlight-med);
+    border: 3px solid var(--surface1);
     box-shadow: 4px 4px 6px var(--shadow);
     opacity: 0;
     visibility: hidden;
