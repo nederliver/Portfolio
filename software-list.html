@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Portfolio - Software List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="portfolio-container">
+        <div class="window">
+            <div class="window-header">
+                <div class="window-title">SOFTWARE LIST</div>
+                <div class="window-controls">
+                    <div class="control-btn love"></div>
+                    <div class="control-btn gold"></div>
+                    <div class="control-btn pine"></div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div id="software-list" class="page">
+                    <div class="page-title">Software List</div>
+                    <div class="page-text">
+                        A collection of software tools and applications I use or recommend.
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Search software..." id="searchInput">
+                    </div>
+
+                    <div class="categories-container" id="categoriesContainer">
+                        <!-- Categories will be populated by JavaScript -->
+                    </div>
+
+                    <div class="software-grid" id="softwareGrid">
+                        <!-- Software items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dock">
+            <a href="index.html" class="dock-item" data-tooltip="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M4 4h16v12H8V8h8v6h2V6H6v12h14v2H4V4zm10 10v-4h-4v4h4z"/>
+                </svg>
+            </a>
+            <a href="artworks.html" class="dock-item" data-tooltip="Artworks">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 3v18h18V3H3zm16 2v14H5V5h14zM7 7h6v6H9v2H7V7zm8 6h-2v2h-2v2h2v-2h2v2h2v-2h-2v-2zm0 0h2v-2h-2v2zM9 9v2h2V9H9z"/>
+                </svg>
+            </a>
+            <a href="software-list.html" class="dock-item active" data-tooltip="Software List">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"/>
+                </svg>
+            </a>
+            <a href="links.html" class="dock-item" data-tooltip="Links">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M4 6h7v2H4v8h7v2H2V6h2zm16 0h-7v2h7v8h-7v2h9V6h-2zm-3 5H7v2h10v-2z"/>
+                </svg>
+            </a>
+            <a href="contact.html" class="dock-item" data-tooltip="Contact">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M4 4h18v8h-2V6H4v12h8v2H2V4h2zm4 4H6v2h2v2h2v2h4v-2h2v-2h2V8h-2v2h-2v2h-4v-2H8V8zm10 6h2v4h4v2h-2v2h-2v2h-2v-4h-4v-2h2v-2h2v-2z"/>
+                </svg>
+            </a>
+            <a href="donate.html" class="dock-item" data-tooltip="Donate">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M11 2h2v4h6v2H7v3H5V6h6V2zM5 18h6v4h2v-4h6v-2H5v2zm14-7H5v2h12v3h2v-5z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    <span class="license">2025 nederliver, All Rights Reserved</span>
+    <span class="page-version">v1.1.0</span>
+
+    <script src="script.js"></script>
+</body>
+</html>
