@@ -24,6 +24,8 @@
     --gold: #f6c177;
     --pine: #31748f;
     --rose: #ebbcba;
+    --iris: #c4a7e7;
+    --foam: #9ccfd8;
 }
 body {
     font-family: "Tiny5", sans-serif;
@@ -143,9 +145,9 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(20deg, var(--gold), var(--pine), var(--gold));
+    background: linear-gradient(15deg, var(--rose), var(--love), var(--rose));
     background-size: 200% 100%;
-    animation: gradientShift 3s linear infinite;
+    animation: gradientShift 4.5s linear infinite;
 }
 
 @keyframes gradientShift {
@@ -185,7 +187,7 @@ body {
 }
 
 .dock-item {
-    color: var(--muted);
+    color: var(--hightlight-high);
     width: clamp(36px, 6vw, 48px);
     height: clamp(36px, 6vw, 48px);
     cursor: pointer;
@@ -195,7 +197,7 @@ body {
     transition: all 0.1s ease;
     position: relative;
 }
-.dock-item.active { color: var(--suble1); }
+.dock-item.active { color: var(--suble); }
 .dock-item:hover { transform: translateY(-2px); }
 
 /* Tooltip Styles */
@@ -271,7 +273,16 @@ body {
     transition: transform 0.2s ease;
 }
 
-
+.no-drag {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    -webkit-user-drag: none;
+}
 
 .link-item-youtube::after,
 .link-item-modrinth::after,
@@ -283,9 +294,9 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(40deg, var(--gold), var(--love), var(--gold));
+    background: linear-gradient(15deg, var(--gold), var(--foam), var(--gold));
     background-size: 200% 100%;
-    animation: gradientShift 3s linear infinite;
+    animation: gradientShift 4.5s linear infinite;
 }
 
 .project-img { height: clamp(60px, 12vh, 100px); }
