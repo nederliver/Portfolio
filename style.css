@@ -437,8 +437,6 @@ textarea.contact-inputs {
     user-select: none;
 }
 
-
-
 .category.active {
     color: var(--love);
 }
