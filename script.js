@@ -8,8 +8,6 @@ const itemSelectors = [
     // Add more selectors as needed
 ];
 
-document.getElementById('no-drag').setAttribute('draggable', false);
-
 // Combine all selectors into one query
 const allItems = document.querySelectorAll(itemSelectors.join(', '));
 
