@@ -128,6 +128,12 @@ document.addEventListener('DOMContentLoaded', function() {
             downloadUrl: "https://prismlauncher.org/download/"
         },
         {
+            title: "Zen Browser",
+            description: "Best actively developed, firefox based browser and my personal choice.",
+            category: "Browsers",
+            downloadUrl: "https://zen-browser.app/download/"
+        },
+        {
             title: "Steam",
             description: "Digital distribution platform for video games and gaming-related content.",
             category: "Gaming",
